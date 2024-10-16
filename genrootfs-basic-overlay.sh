@@ -21,7 +21,7 @@ PACKAGES=$(echo $PACKAGES | sed 's/ /,/g')
 apt-get install -y debootstrap
 mkdir -p $ROOTDIR
 debootstrap --variant=minbase --include=$PACKAGES buster $ROOTDIR $MIRROR
-tar -C basic-overlay \
+tar -C basic_overlay \
 	--owner=root --group=root --mode=go+u-w -c . | tar -C $ROOTDIR -x
 run_in_chroot "systemctl disable systemd-timesyncd"
 run_in_chroot "systemctl enable kbuild.service"

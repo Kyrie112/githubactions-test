@@ -94,7 +94,7 @@ jobs:
         run: |
           chmod +x bin/mkfs.erofs bin/fsck.erofs
           sudo apt update -y
-          sudo ./genrootf-basic-overlays.sh rootfs_4k.erofs.img
+          sudo ./genrootfs-basic-overlay.sh rootfs_4k.erofs.img
 
   qemu-basic-smoking:
     runs-on: ubuntu-22.04

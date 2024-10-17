@@ -3,14 +3,13 @@
 printf "Basic tests run in QEMU ..."
 # Download dependent test tools
 cd /dev
-wget --no-check-certificate https://github.com/lz4/lz4/archive/refs/tags/v1.9.4.tar.gz -O lz4-1.9.4.tar.gz 
-tar -zxvf lz4-1.9.4.tar.gz
-make BUILD_SHARED=no -C lz4-1.9.4 && lz4libdir=$(pwd)/lz4-1.9.4/lib
+# wget --no-check-certificate https://github.com/lz4/lz4/archive/refs/tags/v1.9.4.tar.gz -O lz4-1.9.4.tar.gz 
+# tar -zxvf lz4-1.9.4.tar.gz
+# make BUILD_SHARED=no -C lz4-1.9.4 && lz4libdir=$(pwd)/lz4-1.9.4/lib
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git -b experimental-tests
 
 cd erofs-utils
-./autogen.sh && ./configure --enable-fuse \
-  --with-lz4-incdir=${lz4libdir} --with-lz4-libdir=${lz4libdir}
+./autogen.sh && ./configure --enable-fuse
 make check
 cat ./tests/results/erofs/008.notrun
 

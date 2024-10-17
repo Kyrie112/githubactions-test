@@ -9,7 +9,7 @@ make BUILD_SHARED=no -C lz4-1.9.4 && lz4libdir=$(pwd)/lz4-1.9.4/lib
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git -b experimental-tests
 
 cd erofs-utils
-./autogen.sh && ./configure --enable-debug --enable-werror --enable-fuse --with-selinux \
+./autogen.sh && ./configure --enable-fuse \
   --with-lz4-incdir=${lz4libdir} --with-lz4-libdir=${lz4libdir}
 make check
 

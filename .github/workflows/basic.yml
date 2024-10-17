@@ -83,7 +83,7 @@ jobs:
         with:
           path: |
             rootfs_4k.erofs.img
-          key: genrootfs-basic-overlay${{hashFiles('.github', 'basic-overlay', 'genrootfs-basic-ovl')}}
+          key: genrootfs-basic-overlay${{hashFiles('.github', 'basic-overlay', 'genrootfs-basic-ovly')}}
       - name: Download erofs-utils prebuilts
         if: steps.cache-rootfs.outputs.cache-hit != 'true'
         uses: actions/download-artifact@v4
@@ -110,7 +110,7 @@ jobs:
         with:
           path: |
             rootfs_4k.erofs.img
-          key: genrootfs-basic-overlay${{hashFiles('.github', 'basic-overlay', 'genrootfs-basic-ovl')}}
+          key: genrootfs-basic-overlay${{hashFiles('.github', 'basic-overlay', 'genrootfs-basic-ovly')}}
       - name: Download erofs-utils prebuilts
         uses: actions/download-artifact@v4
         with:

@@ -21,7 +21,7 @@ unzip silesia.zip -d silesia
 ./erofs-utils/fuse/erofsfuse silesia.erofs.img out
 
 # Run stress test
-git clone https://github.com/erofs/erofsstress.git
+git clone --config http.sslVerify=false https://github.com/erofs/erofsstress.git
 gcc erofsstress/stress.c -o stress
 ./stress -l100 -p3 ./out
 # ./erofs-utils/tests/erofsstress/stress -l100 -p3 ./out

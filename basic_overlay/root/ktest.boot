@@ -12,6 +12,7 @@ cd erofs-utils
 ./autogen.sh && ./configure --enable-fuse \
   --with-lz4-incdir=${lz4libdir} --with-lz4-libdir=${lz4libdir}
 make check
+cat ./tests/results/erofs/008.notrun
 
 # Prepare test data benchmark
 cd ../ && mkdir silesia out
